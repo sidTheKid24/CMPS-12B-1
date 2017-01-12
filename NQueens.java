@@ -3,6 +3,8 @@ import java.io.*;
 public class NQueens {
 
 	public static int boardSize;
+	public static int row;
+	public static int column;
 	//static array created from command line argument
 	public static void main(String[] args){
 
@@ -12,6 +14,7 @@ public class NQueens {
 		int y = Integer.parseInt(args[2]);
 		board[x][y] = 1;
 		display(board);
+		LineOfSight(board);
 
 	}
 
@@ -23,10 +26,21 @@ public class NQueens {
 				}
 				else{
 					System.out.print("1");
+					row = i;
+					column = j;
 				}
 
 			}
 			System.out.println();
+		}	// for placing another queen eliminate the row, column, and both diagonals from being placed for the next queen
+	}
+	public static void LineOfSight(int board[][]){
+		
+		for(int i = 0; i < boardSize; i++)
+		{
+			if(board[row][i] != 1){
+				board[row][i] = 2;	
+			}	
 		}
 	}
 }
