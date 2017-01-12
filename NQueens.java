@@ -5,16 +5,12 @@ public class NQueens {
 	public static int boardSize;
 	//static array created from command line argument
 	public static void main(String[] args){
+
 		boardSize = Integer.parseInt(args[0]);
 		int[][] board = new int[boardSize][boardSize];
 		int x = Integer.parseInt(args[1]);
 		int y = Integer.parseInt(args[2]);
-
 		board[x][y] = 1;
-
-
-
-
 		display(board);
 
 	}
@@ -28,7 +24,7 @@ public class NQueens {
 				else{
 					System.out.print("1");
 				}
-				
+
 			}
 			System.out.println();
 		}
